@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeralize - Matemática e Sustentabilidade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Botão de alternar tema -->
+    <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Menu Hamburger -->
+    <div class="hamburger-menu">
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <div class="menu-sidebar" id="menuSidebar">
+        <button class="menu-close" id="menuClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <h2 style="color: var(--azul-principal); text-align: center;">Navegação</h2>
+        <ul class="menu-nav">
+            <li><a href="#introducao"><i class="fas fa-home"></i> Introdução</a></li>
+            <li><a href="#relatorio"><i class="fas fa-file-alt"></i> Relatório</a></li>
+            <li><a href="#alunos"><i class="fas fa-users"></i> Alunos</a></li>
+            <li><a href="#importancia"><i class="fas fa-question-circle"></i> Importância</a></li>
+            <li><a href="#aplicacoes"><i class="fas fa-lightbulb"></i> Aplicações</a></li>
+            <li><a href="#exemplos"><i class="fas fa-chart-bar"></i> Exemplos</a></li>
+            <li><a href="#calculadora"><i class="fas fa-calculator"></i> Calculadora</a></li>
+            <li><a href="#conclusao"><i class="fas fa-graduation-cap"></i> Conclusão</a></li>
+            <li><a href="#" id="devs-link"><i class="fas fa-code"></i> Devs</a></li>
+        </ul>
+    </div>
+
+    <!-- Modal Devs -->
+    <div id="devs-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 style="color: var(--azul-principal);">Desenvolvedores do Projeto</h2>
+            <p>Conheça a equipe de desenvolvimento responsável por este projeto:</p>
+            
+            <div class="devs-container">
+                <div class="dev-card">
+                    <i class="fas fa-user-graduate" style="margin-bottom: 15px;"></i>
+                    <h3>Ayrá Santos</h3>
+                    <p>Desenvolvedor Front-end</p>
+                    <div class="dev-social">
+                        <a href="https://github.com/Santosxbk" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="dev-card">
+                    <i class="fas fa-user-graduate" style="margin-bottom: 15px;"></i>
+                    <h3>Rafael Quiterio</h3>
+                    <p>Desenvolvedor Front-end</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+                <h3 style="color: var(--azul-escuro);">Tecnologias Utilizadas</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
+                    <span style="background: #E3F2FD; color: var(--azul-principal); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem;">HTML5</span>
+                    <span style="background: #E3F2FD; color: var(--azul-principal); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem;">CSS3</span>
+                    <span style="background: #E3F2FD; color: var(--azul-principal); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem;">JavaScript</span>
+                    <span style="background: #E3F2FD; color: var(--azul-principal); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem;">Font Awesome</span>
+                    <span style="background: #E3F2FD; color: var(--azul-principal); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem;">Google Fonts</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container header-content">
+            <div class="school-info">
+                <h3><i class="fas fa-school"></i> Numeralize</h3>
+                <p><i class="far fa-calendar-alt"></i> Projeto Educacional - 2025</p>
+            </div>
+            <h1>Matemática: Uma Aliada na Busca da Sustentabilidade</h1>
+            <p>Descubra como os números e cálculos podem ajudar a construir um futuro mais sustentável para o nosso planeta</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Introdução -->
+        <section id="introducao" class="animate-on-scroll">
+            <h2>Introdução</h2>
+            <p>Este relatório explora a relação fundamental entre a Matemática e a Sustentabilidade, demonstrando como os conceitos e ferramentas matemáticas são indispensáveis para compreender, medir e solucionar os complexos desafios ambientais e sociais do mundo contemporâneo.</p>
+            
+            <div class="img-container">
+                <img src="https://placehold.co/600x400/1565C0/FFFFFF?text=Matemática+e+Sustentabilidade" alt="Relação entre matemática e sustentabilidade" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
+            </div>
+            
+            <p>A sustentabilidade é definida como a capacidade de atender às necessidades da geração presente sem comprometer a capacidade das gerações futuras de suprirem suas próprias necessidades. Nesse contexto, a Matemática surge não apenas como uma disciplina abstrata, mas como uma linguagem universal que permite quantificar impactos, analisar dados e modelar soluções para um desenvolvimento mais equilibrado e consciente.</p>
+            
+            <p>O objetivo deste trabalho é apresentar como a Matemática, aliada à tecnologia, capacita indivíduos e comunidades a promoverem ações sustentáveis, desde pequenas mudanças de hábitos cotidianos até a criação de políticas para cidades sustentáveis.</p>
+        </section>
+
+        <!-- Relatório -->
+        <section id="relatorio" class="animate-on-scroll">
+            <h2>Relatório de Pesquisa</h2>
+            
+            <h3 style="text-align: center; margin-bottom: 25px;">Equipe de Pesquisa</h3>
+            
+            <div class="students-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 15px; margin-bottom: 30px;">
+                <div style="padding: 15px; border-radius: 10px; text-align: center; font-weight: 500;">Ayrá Santos</div>
+                <div style="padding: 15px; border-radius: 10px; text-align: center; font-weight: 500;">Rafael Quiterio</div>
+                <div style="padding: 15px; border-radius: 10px; text-align: center; font-weight: 500;">Ibeny Viana</div>
+                <div style="padding: 15px; border-radius: 10px; text-align: center; font-weight: 500;">Antony Gabriel</div>
+                <div style="padding: 15px; border-radius: 10px; text-align: center; font-weight: 500;">Wendel Bispo</div>
+            </div>
+            
+            <h3><i class="fas fa-chart-line"></i> A Matemática como Ferramenta de Conscientização e Análise</h3>
+            <p>A Matemática desempenha um papel crucial na formação de cidadãos críticos e conscientes do seu impacto no planeta. Ela oferece as ferramentas necessárias para traduzir problemas ambientais complexos em dados quantificáveis, tornando-os mais claros e permitindo intervenções mais eficazes.</p>
+            
+            <div class="math-example">
+                <h4><i class="fas fa-database"></i> Análise de Dados e Estatística</h4>
+                <p>Ferramentas estatísticas, como tabelas de frequência e gráficos, permitem coletar, organizar e interpretar dados sobre questões ambientais. Por exemplo, ao analisar o consumo de água, a produção de lixo ou o gasto de energia de uma comunidade, é possível identificar padrões de desperdício e propor metas realistas de redução.</p>
+            </div>
+            
+            <div class="math-example">
+                <h4><i class="fas fa-project-diagram"></i> Modelagem Matemática</h4>
+                <p>A criação de modelos matemáticos e equações permite simular o impacto de diferentes ações humanas sobre o meio ambiente. Um exemplo prático é o modelo HumAn and Nature DYnamical (Handy), que utiliza equações diferenciais para simular a evolução da humanidade com base na exploração de recursos naturais e na desigualdade social.</p>
+            </div>
+        </section>
+
+        <!-- Alunos com ícones -->
+        <section id="alunos" class="animate-on-scroll">
+            <h2>Nossa Equipe</h2>
+            <p>Conheça os integrantes do grupo responsável por esta pesquisa:</p>
+            
+            <div class="student-icons">
+                <div class="student-icon">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Ayrá Santos</span>
+                    <p>Pesquisa e Análise de Dados</p>
+                </div>
+                <div class="student-icon">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Rafael Quiterio</span>
+                    <p>Modelagem Matemática</p>
+                </div>
+                <div class="student-icon">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Ibeny Viana</span>
+                    <p>Pesquisa Teórica</p>
+                </div>
+                <div class="student-icon">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Antony Gabriel</span>
+                    <p>Análise Estatística</p>
+                </div>
+                <div class="student-icon">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Wendel Bispo</span>
+                    <p>Design e Apresentação</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Importância -->
+        <section id="importancia" class="animate-on-scroll">
+            <h2>Por que a Matemática é Importante para a Sustentabilidade?</h2>
+            <p>A matemática fornece as ferramentas necessárias para quantificar, analisar e prever fenômenos ambientais, tornando-se essencial para:</p>
+            
+            <div class="gallery">
+                <div class="gallery-item">
+                    <i class="fas fa-ruler-combined"></i>
+                    <h3>Medição Precisas</h3>
+                    <p>Quantificar recursos naturais, consumo e desperdício com exatidão</p>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-search"></i>
+                    <h3>Identificação de Padrões</h3>
+                    <p>Reconhecer tendências de consumo e impacto ambiental ao longo do tempo</p>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Modelagem de Sistemas</h3>
+                    <p>Simular cenários e prever resultados de intervenções ambientais</p>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>Otimização de Recursos</h3>
+                    <p>Maximizar eficiência e minimizar desperdício através de cálculos precisos</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aplicações -->
+        <section id="aplicacoes" class="animate-on-scroll">
+            <h2>Aplicações da Matemática na Sustentabilidade</h2>
+            
+            <h3><i class="fas fa-graduation-cap"></i> Educação para a Sustentabilidade</h3>
+            <p>Projetos educacionais interdisciplinares que unem Matemática e Tecnologia são essenciais para formar jovens preparados para os desafios do futuro. Uma abordagem eficaz é a Aprendizagem Baseada em Projetos (PBL), onde os alunos identificam problemas reais em suas comunidades e utilizam a matemática para desenvolver soluções.</p>
+            
+            <div class="math-example">
+                <h4><i class="fas fa-list-ol"></i> Etapas do Processo</h4>
+                <ul style="margin-left: 20px;">
+                    <li><strong>Diagnóstico:</strong> Pesquisar e coletar dados sobre um problema local</li>
+                    <li><strong>Análise:</strong> Usar planilhas para organizar e analisar os dados quantitativamente</li>
+                    <li><strong>Prototipagem:</strong> Criar protótipos digitais ou físicos de soluções</li>
+                    <li><strong>Apresentação:</strong> Comunicar os resultados com base nos dados coletados</li>
+                </ul>
+            </div>
+            
+            <h3 style="margin-top: 30px;"><i class="fas fa-city"></i> Cidades e Consumo Sustentável</h3>
+            <p>A aplicação da Matemática em projetos de sustentabilidade é vasta e pode ser observada em diversas áreas, desde a educação até a gestão de recursos em grandes centros urbanos.</p>
+            
+            <div class="gallery">
+                <div class="gallery-item">
+                    <i class="fas fa-tint"></i>
+                    <h3>Gestão de Água</h3>
+                    <p>Equações matemáticas podem modelar o consumo de água, permitindo um controle preciso</p>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Eficiência Energética</h3>
+                    <p>Cálculos para otimizar o consumo de energia em residências e empresas</p>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-recycle"></i>
+                    <h3>Gestão de Resíduos</h3>
+                    <p>Estatísticas para planejar coleta seletiva e programas de reciclagem</p>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-route"></i>
+                    <h3>Otimização de Rotas</h3>
+                    <p>Algoritmos para reduzir distâncias percorridas e emissões de poluentes</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exemplos -->
+        <section id="exemplos" class="animate-on-scroll">
+            <h2>Exemplos Práticos</h2>
+            
+            <div class="math-example">
+                <h3><i class="fas fa-tint"></i> 1. Cálculo de Economia de Água</h3>
+                <p>Um banho de 15 minutos consome cerca de 135 litros de água. Se reduzirmos para 5 minutos, economizamos 90 litros por banho. Em uma família de 4 pessoas, a economia mensal seria:</p>
+                <p><strong>4 pessoas × 90 litros × 30 dias = 10.800 litros/mês</strong></p>
+                <p>Isso demonstra como operações matemáticas básicas (multiplicação) podem ilustrar o impacto de mudanças de comportamento.</p>
+            </div>
+            
+            <div class="math-example">
+                <h3><i class="fas fa-seedling"></i> 2. Projeto de Coleta de Tampinhas</h3>
+                <p>Em um projeto escolar de coleta de tampinhas plásticas, os alunos aplicam conceitos de:</p>
+                <ul style="margin-left: 20px; margin-bottom: 15px;">
+                    <li><strong>Contagem:</strong> Quantificar tampinhas coletadas</li>
+                    <li><strong>Classificação:</strong> Separar por cor, tipo de plástico</li>
+                    <li><strong>Estatística:</strong> Calcular média por aluno, projeções</li>
+                    <li><strong>Geometria:</strong> Calcular volume ocupado pelas tampinhas</li>
+                </ul>
+                <p>Essas atividades transformam abstratos conceitos matemáticos em experiências concretas e relevantes.</p>
+            </div>
+            
+            <div class="math-example">
+                <h3><i class="fas fa-solar-panel"></i> 3. Cálculo de Energia Solar</h3>
+                <p>Para dimensionar um sistema de energia solar, usamos fórmulas como:</p>
+                <p><strong>Energia necessária (kWh) = Potência dos aparelhos (W) × Tempo de uso (h) / 1000</strong></p>
+                <p>Com esse cálculo, é possível determinar quantas placas solares são necessárias para suprir o consumo de uma residência, promovendo energia limpa e sustentável.</p>
+            </div>
+        </section>
+
+        <!-- Calculadora de Sustentabilidade -->
+        <section id="calculadora" class="animate-on-scroll">
+            <h2>Calculadora de Emissões de CO₂</h2>
+            
+            <div class="calculator">
+                <h3><i class="fas fa-car"></i> Calcule suas emissões de transporte</h3>
+                
+                <div class="transport-container">
+                    <div class="transport-item">
+                        <div class="input-group">
+                            <label for="transporte1"><i class="fas fa-bus"></i> Tipo de Transporte:</label>
+                            <select id="transporte1" class="transporte-select">
+                                <option value="0.21">Carro a gasolina</option>
+                                <option value="0.27">Carro a diesel</option>
+                                <option value="0.11">Motocicleta</option>
+                                <option value="0.05">Ônibus</option>
+                                <option value="0.04">Metrô/Trem</option>
+                                <option value="0.02">Veículo elétrico</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="distancia1"><i class="fas fa-road"></i> Distância (km):</label>
+                            <input type="number" id="distancia1" placeholder="Ex: 50" min="0" step="0.1">
+                        </div>
+                    </div>
+                    
+                    <div class="transport-item" id="segundoTransporte" style="display: none;">
+                        <div class="input-group">
+                            <label for="transporte2"><i class="fas fa-bus"></i> Segundo Transporte:</label>
+                            <select id="transporte2" class="transporte-select">
+                                <option value="0.21">Carro a gasolina</option>
+                                <option value="0.27">Carro a diesel</option>
+                                <option value="0.11">Motocicleta</option>
+                                <option value="0.05">Ônibus</option>
+                                <option value="0.04">Metrô/Trem</option>
+                                <option value="0.02">Veículo elétrico</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="distancia2"><i class="fas fa-road"></i> Distância (km):</label>
+                            <input type="number" id="distancia2" placeholder="Ex: 30" min="0" step="0.1">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input-group" style="margin-top: 15px;">
+                    <button type="button" id="adicionarTransporte" class="btn-secondary">
+                        <i class="fas fa-plus"></i> Adicionar outro transporte
+                    </button>
+                    <button type="button" id="removerTransporte" class="btn-secondary" style="display: none;">
+                        <i class="fas fa-minus"></i> Remover transporte
+                    </button>
+                </div>
+                
+                <button onclick="calcularEmissaoTransporte()"><i class="fas fa-calculator"></i> Calcular Emissões</button>
+                
+                <div class="result" id="resultadoTransporte">
+                    <h4><i class="fas fa-info-circle"></i> Resultado:</h4>
+                    <div id="detalhesEmissao"></div>
+                    <div id="impactoVisual" style="margin-top: 15px; height: 20px; background: linear-gradient(90deg, #4CAF50, #FFC107, #F44336); border-radius: 10px;"></div>
+                </div>
+            </div>
+            
+            <p style="margin-top: 25px; font-style: italic; text-align: center;">Esta calculadora ajuda a quantificar o impacto ambiental dos seus deslocamentos e tomar decisões mais conscientes.</p>
+        </section>
+
+        <!-- Conclusão -->
+        <section id="conclusao" class="animate-on-scroll">
+            <h2>Conclusão</h2>
+            
+            <p>A Matemática é muito mais do que uma disciplina acadêmica; é uma ferramenta essencial para a sobrevivência e o bem-estar das futuras gerações. Ela nos fornece a linguagem para compreender a complexidade do nosso planeta, mensurar nosso impacto sobre ele e projetar um futuro sustentável.</p>
+            
+            <div class="math-example">
+                <h3><i class="fas fa-lightbulb"></i> Perspectivas Futuras</h3>
+                <p>Ao integrar o ensino da Matemática com temas ambientais, promovemos não apenas o desenvolvimento do raciocínio lógico, mas também a formação de cidadãos com responsabilidade social e ambiental, capazes de agir de forma crítica e creativa para solucionar os problemas do mundo real.</p>
+            </div>
+            
+            <p>Portanto, o domínio dos conhecimentos matemáticos é fundamental para a participação social efetiva e para a construção de uma sociedade mais justa, consciente e sustentável. Através da aplicação prática dos conceitos matemáticos em projetos de sustentabilidade, os estudantes desenvolvem habilidades que os tornam agentes de transformação em suas comunidades.</p>
+            
+            <div style="text-align: center; margin-top: 30px; padding: 20px; background: #E3F2FD; border-radius: 12px;">
+                <h3 style="color: var(--azul-principal);"><i class="fas fa-quote-left"></i> A Matemática é a linguagem com a qual Deus escreveu o universo. <i class="fas fa-quote-right"></i></h3>
+                <p style="font-style: italic; margin-top: 10px;">- Galileu Galilei</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">Numeralize</div>
+            <p><i class="far fa-calendar-alt"></i> Projeto Educacional - 2025</p>
+            <p><i class="fas fa-users"></i> Alunos: Ayrá Santos, Rafael Quiterio, Ibeny Viana, Antony Gabriel e Wendel Bispo</p>
+            <p><i class="fas fa-book"></i> Tema: Matemática: Uma Aliada na Busca da Sustentabilidade</p>
+            <p>© 2025 - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
