@@ -3,8 +3,8 @@
 **GitHub Pages**  
 Site do trabalho escolar — *Colégio 24 de Outubro — 2º B — Outubro/2025*  
 
-🔗 **Acesse aqui**  
-https://santosxbk.github.io/Numezalize/
+🔗 **[Acesse aqui](https://santosxbk.github.io/Numezalize/)**  
+
 ---
 
 ## 📚 Sobre  
