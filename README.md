@@ -2,6 +2,8 @@
 
 **GitHub Pages**  
 Site do trabalho escolar — *Colégio 24 de Outubro — 2º B — Outubro/2025*  
+<img width="1138" height="419" alt="image" src="https://github.com/user-attachments/assets/81c5965d-0cbc-4ecb-b48e-2fe549b31bc0" />
+
 
 🔗 **[Acesse aqui](https://santosxbk.github.io/Numezalize/)**  
 
