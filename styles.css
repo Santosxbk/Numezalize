@@ -1,0 +1,924 @@
+/* Variáveis de cores para tema claro */
+:root {
+    --azul-principal: #1565C0;
+    --azul-escuro: #0D47A1;
+    --azul-claro: #42A5F5;
+    --azul-brilhante: #2196F3;
+    --laranja-destaque: #FF5722;
+    --laranja-claro: #FF9800;
+    --texto-escuro: #212121;
+    --texto-claro: #757575;
+    --fundo-claro: #F9F9F9;
+    --fundo-cinza: #EEEEEE;
+    --branco: #FFFFFF;
+    --sombra: rgba(0, 0, 0, 0.1);
+    --degrade-azul: linear-gradient(135deg, var(--azul-principal), var(--azul-escuro));
+    --degrade-laranja: linear-gradient(135deg, var(--laranja-destaque), var(--laranja-claro));
+    
+    /* Novas variáveis para tema escuro */
+    --bg-escuro: #121212;
+    --bg-card-escuro: #1E1E1E;
+    --bg-card-hover-escuro: #252525;
+    --texto-escuro-claro: #E0E0E0;
+    --texto-escuro-medio: #B0B0B0;
+    --borda-escura: #333333;
+}
+
+/* Tema escuro */
+.dark-mode {
+    --azul-principal: #64B5F6;
+    --azul-escuro: #90CAF9;
+    --azul-claro: #42A5F5;
+    --laranja-destaque: #FF8A65;
+    --laranja-claro: #FFAB91;
+    --texto-escuro: #E0E0E0;
+    --texto-claro: #B0B0B0;
+    --fundo-claro: #121212;
+    --fundo-cinza: #1A1A1A;
+    --branco: #1E1E1E;
+    --sombra: rgba(0, 0, 0, 0.4);
+    --degrade-azul: linear-gradient(135deg, #0D47A1, #1565C0);
+    --degrade-laranja: linear-gradient(135deg, #E64A19, #FF5722);
+}
+
+/* Reset moderno */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--fundo-claro);
+    color: var(--texto-escuro);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Tipografia responsiva */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+h2 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    margin-bottom: 30px;
+    position: relative;
+    text-align: center;
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--degrade-azul);
+    border-radius: 2px;
+}
+
+h3 {
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    color: var(--azul-escuro);
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+}
+
+/* Cabeçalho moderno com glassmorphism */
+header {
+    background: var(--degrade-azul);
+    color: var(--branco);
+    padding: clamp(30px, 8vw, 60px) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: cover;
+    background-position: center;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.school-info {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 15px 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    max-width: 90%;
+}
+
+header h1 {
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+header p {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Botão de alternar tema - TOTALMENTE RESPONSIVO */
+.theme-toggle {
+    position: fixed;
+    top: clamp(10px, 3vw, 20px);
+    left: clamp(10px, 3vw, 20px);
+    z-index: 1000;
+    background: var(--azul-principal);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: clamp(40px, 10vw, 50px);
+    height: clamp(40px, 10vw, 50px);
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.05);
+    background: var(--azul-escuro);
+}
+
+/* Menu Hamburger - TOTALMENTE RESPONSIVO */
+.hamburger-menu {
+    position: fixed;
+    top: clamp(10px, 3vw, 20px);
+    right: clamp(10px, 3vw, 20px);
+    z-index: 1000;
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: clamp(40px, 10vw, 50px);
+    height: clamp(40px, 10vw, 50px);
+    background: var(--azul-principal);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background: var(--azul-escuro);
+    transform: scale(1.05);
+}
+
+.menu-toggle span {
+    display: block;
+    width: clamp(20px, 6vw, 24px);
+    height: 3px;
+    background: var(--branco);
+    margin: 2px 0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Menu lateral responsivo */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(300px, 85vw);
+    height: 100%;
+    background: var(--branco);
+    z-index: 1000;
+    padding: clamp(50px, 10vw, 70px) clamp(15px, 4vw, 20px) clamp(15px, 4vw, 20px);
+    overflow-y: auto;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .menu-sidebar {
+    background: var(--bg-card-escuro);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.4);
+    color: var(--texto-escuro-claro);
+}
+
+.menu-sidebar.active {
+    right: 0;
+}
+
+.menu-close {
+    position: absolute;
+    top: clamp(15px, 4vw, 20px);
+    right: clamp(15px, 4vw, 20px);
+    background: none;
+    border: none;
+    font-size: clamp(1.3rem, 4vw, 1.5rem);
+    color: var(--azul-principal);
+    cursor: pointer;
+}
+
+.dark-mode .menu-close {
+    color: var(--azul-claro);
+}
+
+.menu-nav {
+    list-style: none;
+    margin-top: 30px;
+}
+
+.menu-nav li {
+    margin-bottom: 10px;
+}
+
+.menu-nav a {
+    display: block;
+    padding: 12px 15px;
+    color: var(--texto-escuro);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+.menu-nav a:hover {
+    background: rgba(21, 101, 192, 0.1);
+    color: var(--azul-principal);
+    transform: translateX(5px);
+}
+
+.dark-mode .menu-nav a {
+    color: var(--texto-escuro-claro);
+}
+
+.dark-mode .menu-nav a:hover {
+    background: rgba(100, 181, 246, 0.15);
+    color: var(--azul-claro);
+}
+
+.menu-nav i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Seções com design moderno e responsivo */
+section {
+    padding: clamp(30px, 8vw, 60px) clamp(15px, 4vw, 20px);
+    margin-bottom: 30px;
+    border-radius: 16px;
+    background: var(--branco);
+    box-shadow: 0 10px 30px var(--sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: var(--texto-escuro);
+}
+
+.dark-mode section {
+    background: var(--bg-card-escuro);
+    border: 1px solid var(--borda-escura);
+    color: var(--texto-escuro-claro);
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode section:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+section:nth-child(even) {
+    background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+}
+
+.dark-mode section:nth-child(even) {
+    background: linear-gradient(135deg, #1A1A1A 0%, #1E1E1E 100%);
+}
+
+/* Cards de alunos totalmente responsivos */
+.student-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+    gap: clamp(15px, 4vw, 30px);
+    margin-top: 30px;
+}
+
+.student-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: clamp(15px, 4vw, 20px) clamp(10px, 3vw, 15px);
+    border-radius: 16px;
+    background: var(--branco);
+    box-shadow: 0 5px 15px var(--sombra);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    color: var(--texto-escuro);
+}
+
+.dark-mode .student-icon {
+    background: var(--bg-card-escuro);
+    border: 1px solid var(--borda-escura);
+    color: var(--texto-escuro-claro);
+}
+
+.student-icon:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--degrade-azul);
+    border-radius: 2px;
+}
+
+.student-icon i {
+    font-size: clamp(40px, 10vw, 60px);
+    color: var(--azul-principal);
+    margin-bottom: 15px;
+}
+
+.student-icon span {
+    margin-top: 10px;
+    font-weight: 600;
+    color: var(--azul-principal);
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+.student-icon p {
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    color: var(--texto-claro);
+    margin-top: 5px;
+}
+
+.student-icon:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode .student-icon:hover {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Galeria moderna e responsiva */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    gap: clamp(15px, 4vw, 25px);
+    margin-top: 30px;
+}
+
+.gallery-item {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+    padding: clamp(15px, 4vw, 25px) clamp(10px, 3vw, 20px);
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px var(--sombra);
+    border-left: 5px solid var(--azul-claro);
+    color: var(--texto-escuro);
+}
+
+.dark-mode .gallery-item {
+    background: linear-gradient(135deg, #1E1E1E 0%, #252525 100%);
+    border-left: 5px solid var(--azul-principal);
+    color: var(--texto-escuro-claro);
+}
+
+.gallery-item i {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+    color: var(--azul-principal);
+    margin-bottom: 15px;
+}
+
+.gallery-item h3 {
+    margin-bottom: 12px;
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    color: var(--azul-escuro);
+}
+
+.dark-mode .gallery-item h3 {
+    color: var(--azul-claro);
+}
+
+.gallery-item p {
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+    margin-bottom: 0;
+    color: var(--texto-claro);
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    border-left: 5px solid var(--laranja-destaque);
+}
+
+.dark-mode .gallery-item:hover {
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Exemplos matemáticos responsivos */
+.math-example {
+    background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+    padding: clamp(15px, 4vw, 25px);
+    border-radius: 12px;
+    margin: clamp(15px, 4vw, 25px) 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--azul-principal);
+    color: var(--texto-escuro);
+}
+
+.dark-mode .math-example {
+    background: linear-gradient(135deg, #1A1A1A 0%, #252525 100%);
+    border-left: 5px solid var(--azul-principal);
+    color: var(--texto-escuro-claro);
+}
+
+.math-example h3 {
+    color: var(--azul-principal);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+}
+
+.math-example h3 i {
+    margin-right: 10px;
+}
+
+/* Calculadora moderna e responsiva */
+.calculator {
+    background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+    padding: clamp(20px, 5vw, 30px);
+    border-radius: 16px;
+    margin: clamp(20px, 5vw, 30px) 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    color: var(--texto-escuro);
+}
+
+.dark-mode .calculator {
+    background: linear-gradient(135deg, #1A1A1A 0%, #252525 100%);
+    color: var(--texto-escuro-claro);
+}
+
+.calculator h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--azul-principal);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--azul-escuro);
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+.dark-mode .input-group label {
+    color: var(--azul-claro);
+}
+
+.calculator input, .calculator select {
+    width: 100%;
+    padding: clamp(12px, 3vw, 14px) clamp(15px, 3vw, 18px);
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    transition: all 0.3s ease;
+    background: var(--branco);
+    color: var(--texto-escuro);
+}
+
+.dark-mode .calculator input, 
+.dark-mode .calculator select {
+    border: 2px solid var(--borda-escura);
+    background: var(--bg-card-escuro);
+    color: var(--texto-escuro-claro);
+}
+
+.calculator input:focus, .calculator select:focus {
+    border-color: var(--azul-claro);
+    box-shadow: 0 0 0 3px rgba(66, 165, 245, 0.2);
+    outline: none;
+}
+
+.calculator button {
+    width: 100%;
+    padding: clamp(14px, 3vw, 16px);
+    background: var(--degrade-azul);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(21, 101, 192, 0.3);
+}
+
+.calculator button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(21, 101, 192, 0.4);
+}
+
+.calculator button:active {
+    transform: translateY(0);
+}
+
+.calculator .result {
+    margin-top: 25px;
+    padding: clamp(15px, 4vw, 20px);
+    background: var(--branco);
+    border-radius: 12px;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--laranja-destaque);
+    color: var(--texto-escuro);
+}
+
+.dark-mode .calculator .result {
+    background: var(--bg-card-escuro);
+    color: var(--texto-escuro-claro);
+}
+
+.calculator .result.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Lista de alunos responsiva */
+.students-list div {
+    background: #E3F2FD;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 500;
+    color: var(--azul-principal);
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+.dark-mode .students-list div {
+    background: rgba(25, 118, 210, 0.2);
+    color: var(--azul-claro);
+}
+
+/* Citação */
+.dark-mode .math-example blockquote {
+    background: rgba(25, 118, 210, 0.2);
+    color: var(--texto-escuro-claro);
+    border-left: 5px solid var(--azul-claro);
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Rodapé moderno e responsivo */
+footer {
+    background: var(--degrade-azul);
+    color: var(--branco);
+    text-align: center;
+    padding: clamp(30px, 8vw, 40px) 0;
+    margin-top: 60px;
+}
+
+footer p {
+    margin: 10px 0;
+    opacity: 0.9;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Modal Devs totalmente responsivo */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s ease;
+    overflow-y: auto;
+    padding: 20px 0;
+}
+
+.modal-content {
+    background-color: var(--branco);
+    margin: 5% auto;
+    padding: clamp(20px, 5vw, 30px);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: slideIn 0.4s ease;
+    color: var(--texto-escuro);
+}
+
+.dark-mode .modal-content {
+    background-color: var(--bg-card-escuro);
+    color: var(--texto-escuro-claro);
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-modal {
+    position: absolute;
+    top: clamp(10px, 3vw, 15px);
+    right: clamp(15px, 4vw, 20px);
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: bold;
+    color: var(--azul-principal);
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 1002;
+    background: transparent;
+    border: none;
+}
+
+.dark-mode .close-modal {
+    color: var(--azul-claro);
+}
+
+.close-modal:hover {
+    color: var(--laranja-destaque);
+}
+
+.devs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    gap: clamp(15px, 4vw, 20px);
+    margin-top: 20px;
+}
+
+.dev-card {
+    background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+    padding: clamp(15px, 4vw, 20px);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    color: var(--texto-escuro);
+}
+
+.dark-mode .dev-card {
+    background: linear-gradient(135deg, #1A1A1A 0%, #252525 100%);
+    color: var(--texto-escuro-claro);
+}
+
+.dev-card:hover {
+    transform: translateY(-5px);
+}
+
+.dev-card i {
+    font-size: clamp(40px, 10vw, 60px);
+    color: var(--azul-principal);
+    margin-bottom: 15px;
+}
+
+.dev-card h3 {
+    color: var(--azul-principal);
+    margin-bottom: 5px;
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+}
+
+.dev-card p {
+    color: var(--texto-claro);
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    margin-bottom: 10px;
+}
+
+.dev-social {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.dev-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(30px, 8vw, 36px);
+    height: clamp(30px, 8vw, 36px);
+    background: var(--azul-claro);
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+}
+
+.dev-social a:hover {
+    background: var(--azul-principal);
+    transform: scale(1.1);
+}
+
+/* Tecnologias tags responsivas */
+.dark-mode .modal-content span {
+    background: rgba(25, 118, 210, 0.2) !important;
+    color: var(--azul-claro) !important;
+}
+
+/* Estilos para a nova calculadora responsiva */
+.transport-container {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(15px, 4vw, 20px);
+    margin-bottom: 20px;
+}
+
+.transport-item {
+    padding: clamp(12px, 3vw, 15px);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid #e0e0e0;
+}
+
+.dark-mode .transport-item {
+    background: rgba(30, 30, 30, 0.5);
+    border: 1px solid #333;
+}
+
+.btn-secondary {
+    background: var(--fundo-cinza);
+    color: var(--texto-escuro);
+    border: 1px solid #ddd;
+    padding: clamp(8px, 2vw, 10px) clamp(12px, 3vw, 15px);
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+}
+
+.dark-mode .btn-secondary {
+    background: var(--bg-card-escuro);
+    color: var(--texto-escuro-claro);
+    border: 1px solid #444;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+}
+
+.dark-mode .btn-secondary:hover {
+    background: #333;
+}
+
+/* Imagens responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Melhorias específicas para telas muito pequenas */
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    .menu-sidebar {
+        width: 85vw;
+    }
+    
+    .student-icons {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .devs-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .students-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .math-example ul {
+        margin-left: 15px;
+    }
+    
+    .math-example li {
+        margin-bottom: 8px;
+    }
+}
+
+/* Melhorias para orientação paisagem em dispositivos móveis */
+@media (max-height: 500px) and (orientation: landscape) {
+    header {
+        padding: 20px 0;
+    }
+    
+    .menu-sidebar {
+        padding-top: 60px;
+    }
+    
+    section {
+        padding: 30px 15px;
+    }
+    
+    .modal-content {
+        margin: 2% auto;
+    }
+}
